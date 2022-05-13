@@ -7,6 +7,21 @@ let currentWord = '';
 let currentLanguage = 'pl';
 let words = wordsPL;
 
+let messages = {
+    pl: {
+        good: 'Dobrze!',
+        wrong: 'Źle!'
+    },
+    en: {
+        good: 'Great!',
+        wrong: 'Incorrect!'
+    },
+    ua: {
+        good: 'Добре!',
+        wrong: 'Погано!'
+    }
+}
+
 prepareWord();
 
 function prepareWord() {
@@ -16,6 +31,7 @@ function prepareWord() {
     wordElement.innerText = word;
     inputElement.value = '';
     document.body.style.backgroundColor = 'black';
+    messageElement.style.opacity = 0;
 }
 
 function textInput() {
@@ -37,7 +53,7 @@ function textInput() {
 }
 
 function correctWord() {
-    messageElement.innerText = 'Dobrze!';
+    messageElement.innerText = messages[currentLanguage].good;
     messageElement.style.opacity = 1;
 
 
@@ -49,7 +65,7 @@ function correctWord() {
 
 function wrongWord() {
     document.body.style.backgroundColor = '#d23232';
-    messageElement.innerText = 'Źle!';
+    messageElement.innerText = messages[currentLanguage].wrong;
     messageElement.style.opacity = 1;
 }
 
