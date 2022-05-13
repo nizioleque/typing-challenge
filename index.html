@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Typing challenge</title>
 
     <link rel="stylesheet" href="style.css">
     <script src="words.js" defer></script>
@@ -15,6 +15,12 @@
         <div id="word">word</div>
         <div id="message">Great!</div>
         <input type="text" name="" id="input" oninput="textInput()">
+    </div>
+
+    <div id="languages">
+        <div id='lang-pl' class="selected" onclick="setLanguage('pl')">PL</div>
+        <div id='lang-en' onclick="setLanguage('en')">EN</div>
+        <div id='lang-ua' onclick="setLanguage('ua')">UA</div>
     </div>
 </body>
 </html>

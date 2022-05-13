@@ -1,7 +1,11 @@
 const wordElement = document.querySelector('#word');
 const inputElement = document.querySelector('#input');
 const messageElement = document.querySelector('#message');
+
 let currentWord = '';
+
+let currentLanguage = 'pl';
+let words = wordsPL;
 
 prepareWord();
 
@@ -52,4 +56,22 @@ function wrongWord() {
 function greenColor(current, final) {
     let lightness = current * 36 / final;
     return 'hsl(120, 70%, ' + lightness + '%)';
+}
+
+function setLanguage(newLanguage) {
+    document.querySelector('#lang-' + currentLanguage).classList.toggle('selected');
+    document.querySelector('#lang-' + newLanguage).classList.toggle('selected');
+    currentLanguage = newLanguage;
+
+    if (newLanguage == 'pl') {
+        words = wordsPL;
+    }
+    else if (newLanguage == 'en') {
+        words = wordsEN;
+    }
+    else if (newLanguage == 'ua') {
+        words = wordsUA;
+    }
+
+    prepareWord();
 }
