@@ -1,0 +1,41 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Segoe UI';
+
+    height: 100%;
+    margin: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#content {
+    text-align: center;
+}
+
+#word {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+#message {
+    font-size: 1.2em;
+    margin-bottom: 8px;
+}
+
+#input {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+
+    text-align: center;
+    font-size: 1.5em;
+    width: 150px;
+    padding: 5px;
+}
