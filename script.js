@@ -2,7 +2,16 @@ const wordElement = document.querySelector('#word');
 const inputElement = document.querySelector('#input');
 const messageElement = document.querySelector('#message');
 
+const countWords = document.querySelector('#count-words');
+const countTime = document.querySelector('#count-time');
+const countWpm = document.querySelector('#count-wpm');
+
 let currentWord = '';
+
+let gameStarted = false;
+let timer;
+let correctWords;
+let timerInterval;
 
 let currentLanguage = 'pl';
 let words = wordsPL;
@@ -44,10 +53,23 @@ function prepareWord() {
 function resetStyle() {
     document.body.style.backgroundColor = 'black';
     messageElement.style.opacity = 0;
+}
 
+function startGame() {
+    timer = 0;
+    correctWords = 0;
+
+    timerInterval = setInterval(() => {
+        timer++;
+        updateStats();
+    }, 1000)
+
+    gameStarted = true;
 }
 
 function textInput() {
+    if (gameStarted === false) startGame();
+
     const currentInput = inputElement.value;
     const substring = currentWord.substring(0, currentInput.length);
 
@@ -65,9 +87,26 @@ function textInput() {
     }
 }
 
+function updateStats() {
+    const minutes = Math.floor(timer / 60);
+    let seconds = timer - minutes * 60;
+    if (seconds < 10) seconds = '0' + seconds;
+
+    let wpm = 0;
+    if (timer > 0) wpm = correctWords / timer * 60;
+    wpm = wpm.toFixed(2);
+
+    countTime.innerText = minutes + ':' + seconds;
+    countWpm.innerText = wpm;
+    countWords.innerText = correctWords;
+}
+
 function correctWord() {
     messageElement.innerText = messages[currentLanguage].good;
     messageElement.style.opacity = 1;
+
+    correctWords++;
+    updateStats();
 
     prepareWord();
 
