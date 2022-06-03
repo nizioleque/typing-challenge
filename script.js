@@ -41,6 +41,7 @@ let messages = {
 }
 
 prepareWord();
+setLanguage(currentLanguage)
 
 function prepareWord() {
     const index = randomIntFromInterval(0, words.length - 1);
@@ -140,6 +141,11 @@ function setLanguage(newLanguage) {
     else if (newLanguage == 'ua') {
         words = wordsUA;
     }
+
+    document.querySelector('#msg-words').innerText = messages[newLanguage].words;
+    document.querySelector('#msg-time').innerText = messages[newLanguage].time;
+    document.querySelector('#msg-wpm').innerText = messages[newLanguage].wpm;
+
 
     prepareWord();
 }
