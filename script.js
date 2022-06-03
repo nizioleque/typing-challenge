@@ -30,8 +30,12 @@ function prepareWord() {
     currentWord = word;
     wordElement.innerText = word;
     inputElement.value = '';
+}
+
+function resetStyle() {
     document.body.style.backgroundColor = 'black';
     messageElement.style.opacity = 0;
+
 }
 
 function textInput() {
@@ -56,10 +60,10 @@ function correctWord() {
     messageElement.innerText = messages[currentLanguage].good;
     messageElement.style.opacity = 1;
 
+    prepareWord();
 
     setTimeout(() => {
-        messageElement.style.opacity = 0;
-        prepareWord();
+        resetStyle();
     }, 300);
 }
 
