@@ -10,15 +10,24 @@ let words = wordsPL;
 let messages = {
     pl: {
         good: 'Dobrze!',
-        wrong: 'Źle!'
+        wrong: 'Źle!',
+        words: 'Słowa',
+        time: 'Czas',
+        wpm: 'Słowa/min'
     },
     en: {
         good: 'Great!',
-        wrong: 'Incorrect!'
+        wrong: 'Incorrect!',
+        words: 'Words',
+        time: 'Time',
+        wpm: 'Words/min'
     },
     ua: {
         good: 'Добре!',
-        wrong: 'Погано!'
+        wrong: 'Погано!',
+        words: 'Слова',
+        time: 'Час',
+        wpm: 'Слова/хв'
     }
 }
 
