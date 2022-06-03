@@ -56,6 +56,10 @@ body {
     width: 70px;
 }
 
+#languages > * {
+    cursor: pointer;
+}
+
 .selected {
     text-decoration: underline;
 }
