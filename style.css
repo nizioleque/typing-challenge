@@ -59,3 +59,31 @@ body {
 .selected {
     text-decoration: underline;
 }
+
+
+#stats {
+    position: absolute;
+    top: 20%;
+
+    display: flex;
+    flex-direction: row;
+
+    width: 700px;
+    max-width: 100%;
+}
+
+.col {
+    text-align: center;
+    flex: 1;
+}
+
+.label {
+    font-size: 2em;
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+
+.digit {
+    font-size: 3.2em;
+    font-weight: bold;
+}
