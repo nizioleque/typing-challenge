@@ -68,6 +68,14 @@ function startGame() {
     gameStarted = true;
 }
 
+function stopGame() {
+    clearInterval(timerInterval);
+    gameStarted = false;
+    timer = 0;
+    correctWords = 0;
+    updateStats();
+}
+
 function textInput() {
     if (gameStarted === false) startGame();
 
@@ -128,6 +136,8 @@ function greenColor(current, final) {
 }
 
 function setLanguage(newLanguage) {
+    stopGame();
+
     document.querySelector('#lang-' + currentLanguage).classList.toggle('selected');
     document.querySelector('#lang-' + newLanguage).classList.toggle('selected');
     currentLanguage = newLanguage;
